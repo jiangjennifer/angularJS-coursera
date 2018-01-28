@@ -97,11 +97,11 @@
 		var myList = this;
 		myList.cookieDetector = function() {
 			for (let item of myList.items) {
-				if (item.name.toLowerCase().indexOf("cookies") === -1) {
-					return false;
+				if (item.name.toLowerCase().indexOf("cookies") !== -1) {
+					return true;
 				}
-				return true;
 			};				
+			return false;
 		};
 	}
 })();
