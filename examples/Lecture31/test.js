@@ -50,7 +50,8 @@
 		}
 	}
 
-	function MyList() {
+	MyList.$inject=['ShoppingListService'];
+	function MyList(ShoppingListService) {
 		var ddo = {
 			scope: {
 				items: "<",
@@ -64,6 +65,7 @@
 			controllerAs: "myList",
 			templateUrl: "myList.html",
 			link: MyListLink,
+			service: ShoppingListService,
 		};
 		return ddo;
 	}
@@ -74,15 +76,18 @@
 		// console.log("attrs is : ", attrs);
 		// console.log("controller is :", controller);
 		console.log("this is :", this);
+		var service = this.service();
+		console.log(service.getItems());
 		// console.log(myList.cookieDetector);
 		//Use Angular built in JQLite
 		scope.$watch(() => scope.myList.cookieDetector(), (newValue) => {
 			// console.log(myList.cookieDetector);
-			var findDiv = element.find('div');
+			var findDiv = element.find('div.error');
+			console.log("findDiv:", findDiv);
 			if (newValue) {
-				findDiv.css('display', 'block');
+				findDiv.slideDown(900);
 			} else {
-				findDiv.css('display', 'none');
+				findDiv.slideUp(900);
 			}
 		})
 	}
