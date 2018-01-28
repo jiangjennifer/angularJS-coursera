@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+  	<meta charset="utf-8">
+  	<script src="jquery-3.1.0.min.js"></script>
+    <script src="angular.min.js"></script>
+  	<script src="test.js"></script> 
+  	<link rel="stylesheet" href="styles.css">
+  	<title> Using Directive's transclude </title>
+  </head>
+  <body ng-controller="ShoppingListController as list">
+  	<h3> Using Directive's transclude </h3>
+  	<input type="text" placeholder="new item name" ng-model="list.itemName">
+  	<input type="number" placeholder="new item quantity" ng-model="list.itemNumber">
+  	<button ng-click="list.add()">Add item </button>
+  	<div>
+  		<my-list id="list1" title="{{list.title}}" remove="list.remove(index)" items="list.items">
+  			<span class="warning"> WaRnInG! Cookies detected! </span>
+  		</my-list> 
+  		<my-list id="list2" title="{{list.title}}" remove="list.remove(index)" items="list.items">
+  			<span style="font: bold"> HORROR! Cookies detected! </span>
+  			<div> {{list.title}} </div>
+  		</my-list> 
+  	</div>
+  </body>
+</html>

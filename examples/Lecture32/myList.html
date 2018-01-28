@@ -1,0 +1,7 @@
+<h3> {{myList.title}} </h3>
+<ol>
+	<li ng-repeat="item in myList.items"> {{item.quantity}} of {{item.name}}
+		<button ng-click="myList.remove({index: $index})">Remove item </button>
+	</li>
+</ol>
+<div class="error" ng-transclude></div>
