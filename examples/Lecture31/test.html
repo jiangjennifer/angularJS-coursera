@@ -1,0 +1,17 @@
+<!doctype html>
+<html ng-app="test">
+	<head>
+		<meta charset="utf-8">
+		<script src="angular.min.js"></script>
+		<script src="test.js"></script>
+		<link rel="stylesheet" href="styles.css">
+		<title> Manipulating the DOM with link </title>
+	</head>
+	<body ng-controller="ShoppingListController as list">
+		<h1> Manipulating the DOM with link </h1>
+		<input type="text" placeholder="new item name" ng-model="list.itemName"> 
+		<input type="number" placeholder="new item quantity" ng-model="list.itemQuantity"> 
+		<button ng-click="list.add()"> Add item </button>
+		<my-list items="list.items" remove="list.remove(index)" list="list" removed="{{list.removed}}"></my-list>
+	</body>
+</html>
