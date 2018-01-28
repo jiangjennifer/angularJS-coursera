@@ -72,9 +72,10 @@
 
 	function MyListLink(scope, element, attrs, controller) {
 		console.log("scope is :" , scope);
-		// console.log("element is :", element);
+		console.log("element is :", element);
 		// console.log("attrs is : ", attrs);
 		// console.log("controller is :", controller);
+		console.log("attrs is:", attrs);
 		console.log("this is :", this);
 		var service = this.service();
 		console.log(service.getItems());
@@ -82,7 +83,7 @@
 		//Use Angular built in JQLite
 		scope.$watch(() => scope.myList.cookieDetector(), (newValue) => {
 			// console.log(myList.cookieDetector);
-			var findDiv = element.find('div.error');
+			var findDiv = element.find('.error');
 			console.log("findDiv:", findDiv);
 			if (newValue) {
 				findDiv.slideDown(900);
