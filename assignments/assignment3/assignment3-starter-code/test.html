@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+  	<meta charset="utf-8">
+  	<script src="angular.min.js"></script>
+  	<script src="test.js"></script>
+  	<link rel="stylesheet" href="styles/styles.css">
+  	<title>Assignment 3</title>
+  </head>
+  <body ng-controller='MenuChoiceController as choice'>
+  	<h1>Narrow Down Your Chinese Menu Choice</h1>
+  	<input type="text" ng-model="choice.keyword">
+  	<button ng-click="choice.filter()"> Filter me </button>
+  	<list-menu items="choice.filteredList" 
+  			   remove-item="choice.remove(index)"
+  			   title="{{choice.title}}">
+  			   	<h2 class="vegetables"> eat more vegetables! </h2>
+  			   </list-menu>
+  	<!-- {{choice.filteredList}} -->
+  </body>
+</html>

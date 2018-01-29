@@ -50,3 +50,16 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+
+.highlight {
+  color: blue;
+  font: bold;
+}
+
+.display {
+  display: none;
+}
+
+.vegetables {
+  color: green;
+}

@@ -1,0 +1,10 @@
+<h3 class="display"> {{listMenu.title}} </h3>
+<div ng-transclude></div>	
+<ol>
+	<li ng-repeat="item in listMenu.items"> 
+		<div class="highlight">Item name is: {{item.name}} </div> 
+		<div>Short name is: {{item.short_name}}</div>
+		<div> description is:{{item.description}}</div>
+		<button ng-click="listMenu.removeItem({index: $index})">I don't want this one </button>
+	</li>
+</ol>
