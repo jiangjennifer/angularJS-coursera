@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+  	<meta charset="utf-8">
+  	<script src="angular.min.js"></script>
+  	<script src="test.js"></script>
+  	<link rel="stylesheet" href="styles.css">
+  	<title> Component & Component Based Architecture </title>
+  </head>
+  <body ng-controller="ShoppingListController as list">
+  	<h1 style="text-align: center"> Component based architecture </h1>
+  	<input type="text" ng-model="list.name" placeholder="new item name">
+  	<input type="number" ng-model="list.quantity" placeholder="new item quantity">
+  	<button ng-click="list.add()"> Add item </button>
+  	<my-list items="list.items" title="{{list.title}}" remove="list.remove(index)"></my-list>
+  	<h4 class="reminder"> {{list.removed}} </h4>
+  </body>
+</html>

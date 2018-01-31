@@ -13,3 +13,8 @@ body {
   font-weight: bold;
   display: none;
 }
+
+.reminder {
+	color: green;
+	font-weight: bold;
+}
