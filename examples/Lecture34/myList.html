@@ -1,0 +1,7 @@
+<h3> Shopping List Items </h3>
+<ol>
+	<li ng-repeat="item in $ctrl.items" style="font-weight: bold; color:green; font-size: 150%;"> {{item.quantity}} of {{item.name}} 
+		<button ng-click="$ctrl.remove({index: $index})"> Remove item </button>
+	</li>
+</ol>
+<div class="error"> WaRning! WaRning! Cookies Detected! </div>
