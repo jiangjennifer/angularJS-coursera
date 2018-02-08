@@ -1,0 +1,19 @@
+<!doctype html> 
+<html ng-app='app'>
+	<head>
+		<meta charset="utf-8">
+		<script src="lib/angular.min.js"></script>
+		<script src="lib/angular-ui-router.min.js"></script>
+		<script src='src/test.js'></script>
+		<link rel="stylesheet" href="css/styles.css">
+		<title> ui router </title>
+	</head>
+	<body ng-controller='appController as app'>
+		<h1> ui router </h1>
+		<div class="tabs">
+			<a ui-sref="view1" ui-sref-active="activeTab">View 1 </a>
+			<button ui-sref="view1" ui-sref-active="activeTab">View 1</button>
+			<button ui-sref="view2">View 2 </button>
+		<ui-view></ui-view>
+	</body>
+</html>
