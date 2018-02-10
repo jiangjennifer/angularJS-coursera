@@ -41,13 +41,14 @@
 		}
 	}
 
-	shoppingListController.$inject = ['shoppingListService'];
-	function shoppingListController(shoppingListService) {
+	shoppingListController.$inject = ['items'];
+	function shoppingListController(items) {
 		var list = this;
-		var promise = shoppingListService.getItems();
-		console.log('promise is: ', promise);
-		promise.then((items) => {
-			list.items = items;
-		})
+		// var promise = shoppingListService.getItems();
+		// console.log('promise is: ', promise);
+		// promise.then((items) => {
+		// 	list.items = items;
+		// })
+		list.items = items;
 	}
 })();

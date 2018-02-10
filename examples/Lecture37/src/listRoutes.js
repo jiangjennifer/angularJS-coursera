@@ -15,6 +15,10 @@
 				templateUrl: 'src/listItem.tpl.html',
 				url: '/list',
 				controller: 'shoppingListController as $ctrl',
+				resolve: {
+					items: ['shoppingListService', (shoppingListService) => shoppingListService.getItems()
+					]
+				}
 			});
 
 		$urlRouterProvider.otherwise('/home');
