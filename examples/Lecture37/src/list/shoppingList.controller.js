@@ -18,18 +18,22 @@
 		{
 			name: 'rice',
 			quantity: 1,
+			description: 'jasmine rice',
 		},
 		{
 			name: 'cake',
 			quantity: 2,
+			description: 'yummy cake',
 		},
 		{
 			name: 'apple',
 			quantity: 3,
+			description: 'sweet apple',
 		},
 		{
 			name: 'broccoli',
 			quantity: 4,
+			description: 'fiber!!!'
 		}];
 
 		service.getItems = () => {

@@ -12,14 +12,15 @@
 			})
 
 			.state('list', {
+				url: '/list/{params}',
 				templateUrl: 'src/listItem.tpl.html',
-				url: '/list',
 				controller: 'shoppingListController as $ctrl',
 				resolve: {
-					items: ['shoppingListService', (shoppingListService) => shoppingListService.getItems()
+					items: ['shoppingListService', '$stateParams', 
+					(shoppingListService, $stateParams) => shoppingListService.getItems().then((items) => items[$stateParams.params])
 					]
 				}
-			});
+			})
 
 		$urlRouterProvider.otherwise('/home');
 	}
