@@ -1,0 +1,11 @@
+<a ui-sref='home'> Home </a> &lt Category
+
+<!-- {{$ctrl.categories}} -->
+<ol>
+	<li ng-repeat='item in $ctrl.categories'> 
+		<a ui-sref="menuDetail({itemId: '{{item.short_name}}'})">
+			<div class="categoryName"> {{item.name}} </div>
+		</a>
+		<div ng-if="item.special_instructions" style="color: red;"> Special Instruction: {{item.special_instructions}} </div>
+	</li>
+</ol>

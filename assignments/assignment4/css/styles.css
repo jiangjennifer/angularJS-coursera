@@ -1,0 +1,11 @@
+.header {
+	text-align: center;
+	font-weight: bold;
+	color: green;
+}
+
+.categoryName {
+	color: coral; 
+	font-weight: bold; 
+	font-size: 20px;
+}
