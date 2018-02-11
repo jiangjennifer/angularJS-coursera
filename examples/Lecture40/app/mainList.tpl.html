@@ -1,0 +1,10 @@
+<a ui-sref='home'> Home </a> &lt List
+<ol>
+	<li ng-repeat='item in $ctrl.items'> 
+		<a ui-sref='mainList.item({itemId: $index})'>
+			{{item.quantity}} of {{item.name}} 
+		</a>
+	</li>
+</ol>
+
+<ui-view></ui-view>
