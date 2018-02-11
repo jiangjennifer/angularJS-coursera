@@ -31,22 +31,38 @@
 				}
 			})
 
-			.state('listItem', {
-				url: '/list/{itemId}',
+			// .state('listItem', {
+			// 	// url: '/list/{itemId}',
+			// 	templateUrl: 'app/listItem.tpl.html',
+			// 	controller: listItemController,
+			// 	controllerAs: '$ctrl', 
+			// 	resolve: {
+			// 		item: ['shoppingListService', '$stateParams', 
+			// 					(shoppingListService, $stateParams) => shoppingListService.getItems().then((items) => items[$stateParams.itemId])]
+			// 	},
+			// 	params: {
+			// 		itemId: null
+			// 	}
+			// })
+
+			.state('list.item', {
+				url: '/listItem/{itemId}',
 				templateUrl: 'app/listItem.tpl.html',
 				controller: listItemController,
 				controllerAs: '$ctrl', 
-				resolve: {
-					item: ['shoppingListService', '$stateParams', 
-								(shoppingListService, $stateParams) => shoppingListService.getItems().then((items) => items[$stateParams.itemId])]
-				}
+				// resolve: {
+				// 	item: ['items', '$stateParams', (items, $stateParams) => items[$stateParams.itemId]]
+				// }
+				// params: {
+				// 	itemId: null
+				// }
 			})
 	};
 
-	listItemController.$inject = ['$stateParams','item'];
-	function listItemController($stateParams, item) {
+	listItemController.$inject = ['$stateParams', 'items'];
+	function listItemController($stateParams, items) {
 		var $ctrl = this;
-		$ctrl.item = item;
+		$ctrl.item = items[$stateParams.itemId];
 		console.log('item is: ', $ctrl.item);
 	}
 
