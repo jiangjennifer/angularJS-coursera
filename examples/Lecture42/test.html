@@ -1,0 +1,59 @@
+<!doctype html>
+<html ng-app="app">
+	<head>
+		<meta charset="utf-8">
+		<script src="lib/angular.min.js"></script>
+		<script src="src/test.js"></script>
+		<link rel="stylesheet" href="css/styles.css">
+		<title> Form Validation </title>
+	</head>
+	<body ng-controller="formValidationController as validate">
+		<h1 style="text-align: center"> Form Validation </h1>
+		<form name="userForm" novalidate>
+			<fieldset>
+				<legend> User regestration </legend>
+				<input type="text" 
+							 ng-model="validate.user.name"
+							 name="userName" 
+							 required 
+							 minlength="4"
+							 ng-maxlength="10"
+							 placeholder="Input User name here"> {{validate.user.name}}
+<!-- 							 {{userForm.userName.$error}} -->
+				<span ng-if="userForm.userName.$touched && (userForm.userName.$error.required || userForm.userName.$error.minlength)"> 
+					Username length is 4 minimum
+				</span>
+				<span ng-if="userForm.userName.$error.maxlength && userForm.userName.$touched"> Username length is 10 maximum </span>
+				<div>
+					<input type="email" placeholder="email address" ng-model="validate.user.email" name="email" required>
+					<span ng-if="userForm.email.$touched && userForm.email.$invalid"> 
+						Valid email is required
+					</span>
+				</div>
+				<div>
+					<input type="text" 
+								 ng-model="validate.user.phone"
+								 placeholder="Phone: ###-###-####"
+								 name="phone"
+								 pattern="(\d{3})-(\d{3})-(\d{4})">
+					<span ng-if="userForm.phone.$touched && userForm.phone.$invalid"> Phone in format ###-###-#### </span>
+				</div>
+				<div>
+					<button ng-disabled="userForm.$invalid" 
+									ng-click="validate.submit()">
+									Submit
+					</button>
+					<div style="margin-top: 10px;">
+						Form valid? {{userForm.$valid}}
+					</div>
+				</div>
+			</fieldset>
+		</form>
+		<div ng-if="validate.complete">
+			username: {{validate.user.name}} </br>
+			email: {{validate.user.email}} </br>
+			phone: {{validate.user.phone}} </br>
+		</div>
+
+	</body>
+	</html>		
