@@ -20,7 +20,7 @@
 				console.log('in time out!')
 			}, 900);
 		};
-		
+
 		ctrl.items = appService.getItems();
 		ctrl.addItems = () => {
 			try {
