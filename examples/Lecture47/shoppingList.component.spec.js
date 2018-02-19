@@ -3,13 +3,14 @@
 describe('shopping list component', function() {
 	beforeEach(module('app'));
 
-	beforeEach(inject(function($componentController) {
+	beforeEach(inject(function($componentController, $rootScope) {
 		var items = [
 					{name: 'apple', quantity: 2, description: 'healthy fruit'},
 					{name: 'orange', quantity: 1, description: 'yummy fruit'},
 					{name: 'bread', quantity: 1, description: 'good for breakfast'},
 				];
-		this.ctrl = $componentController('shoppingListComopnent', {}, {items})
+		this.ctrl = $componentController('shoppingListComopnent', {}, {items});
+		// this.$rootScope = $rootScope.$new();
 	}));
 
 	it('should return false when there are no cookies in the list', function() {
@@ -27,7 +28,7 @@ describe('shopping list component', function() {
 	// 	this.ctrl.items = [
 	// 		{name: 'apple', quantity: 1, description: 'kk'},
 	// 	];
-	// 	console.log(this.ctrl.cookieIn);
+	// 	this.ctrl.cookieDetector();
 	// 	expect(this.ctrl.cookieIn).toBeFalsy();
 	// });
 
@@ -35,7 +36,9 @@ describe('shopping list component', function() {
 	// 	this.ctrl.items = [
 	// 		{name: 'cookies', quantity: 1, description: 'yay dessert!'},
 	// 	];
-	// 	expect(this.ctrl.cookieDetector()).toBeTruthy();
+	// 	this.ctrl.cookieDetector();
+	// 	this.$rootScope.$apply();
+	// 	expect(this.ctrl.cookieIn).toBeTruthy();
 	// })
 
 })

@@ -13,10 +13,11 @@
 	shoppingListController.$inject = ['$q'];
 	function shoppingListController($q) {
 		var $ctrl = this;
-		// this.ctrl.cookieIn = false;
+		// $ctrl.cookieIn = false;
 
 		// $ctrl.$doCheck = () => {
-		// 	this.ctrl.cookieIn = $ctrl.cookieDetector();
+		// 	$ctrl.cookieIn = $ctrl.cookieDetector();
+		// 	console.log($ctrl.cookieIn);
 		// };
 
 		$ctrl.cookieDetector = () => {
