@@ -10,7 +10,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/restaurant.css">
 </head>
-<body ng-app="restaurant">
+<body ng-app="restaurant" ng-strict-di>
+
+	<!-- Fixed position loading indicator -->
+  <spinner-loading class="loading-indicator"></spinner-loading>
+
 	<header>
 		<nav id="header-nav" class="navbar navbar-default">
 			<div class="container">
@@ -116,7 +120,14 @@
 
   <!-- src -->
   <script src="src/restaurant.module.js"></script>
+
+  <!-- public module -->
   <script src="src/public/public.module.js"></script>
   <script src="src/public/public.route.js"></script>
+
+  <!-- common module -->
+  <script src="src/common/common.module.js"></script>
+  <script src="src/common/loading/loadingSpinner.component.js"></script>
+  <script src="src/common/loading/loading.interceptor.js"></script>
 </body>
 </html>
