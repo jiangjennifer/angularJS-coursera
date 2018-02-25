@@ -13,6 +13,15 @@
 				url: ApiPath + '/categories.json',
 			}).then((response) => response.data);
 		}
+
+		service.getMenuItems = (param) => {
+			return $http({
+				url: ApiPath + '/menu_items.json',
+				params: {
+					category : param,
+				}
+			}).then((response) => response.data);
+		}
 		
 	}
 })();

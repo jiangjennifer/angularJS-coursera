@@ -1,0 +1,27 @@
+<!-- {{$ctrl.menuItem}} -->
+<div class="container">
+	<h2 id="menu-categories-title" class="text-center">{{$ctrl.menuItem.category.name}} Menu</h2>
+	<div class="text-center">{{$ctrl.menuItem.category.special_instructions}}</div>
+
+	<div class="menu-item-tile col-md-6" ng-repeat="item in $ctrl.menuItem.menu_items">
+	  <div class="row">
+	    <div class="col-sm-5">
+	      <div class="menu-item-photo">
+	        <div>{{item.short_name}}</div>
+	        <img class="img-responsive" width="250" height="150" 
+	        		 ng-src="{{$ctrl.ApiPath}}/images/{{item.short_name}}.jpg" alt="{{item.name}}">
+	      </div>
+	      <div class="menu-item-price">{{item.price_small | currency}}
+	      											<span> {{item.small_portion_name}}</span> 
+	      														 {{item.price_large | currency}} 
+	      											<span>{{item.large_portion_name}}</span>
+	      </div>
+	    </div>
+	    <div class="menu-item-description col-sm-7">
+	      <h3 class="menu-item-title">{{item.name}}</h3>
+	      <p class="menu-item-details">{{item.description}}</p>
+	    </div>
+	  </div>
+	  <hr class="visible-xs">
+	</div>
+</div>

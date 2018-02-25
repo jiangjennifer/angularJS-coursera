@@ -14,6 +14,9 @@
 					$rootScope.$broadcast('spinner: active', {
 						on: true,
 					});
+					$rootScope.$on('spinner: active', (event, data) => {
+						console.log("spinner active is: ", data.on);
+					})
 				}
 				return config;
 			},

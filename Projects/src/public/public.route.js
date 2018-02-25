@@ -24,6 +24,17 @@
 						return menuService.getCategory();
 					}]
 				}
-			});
+			})
+			.state('public.items', {
+				url: '/menu-items/{param}',
+				controller: 'menuItemController',
+				controllerAs: '$ctrl',
+				templateUrl: 'src/public/menuItem/menuItem.tpl.html',
+				resolve: {
+					menuItem: ['menuService', '$stateParams', (menuService, $stateParams) => {
+						return menuService.getMenuItems($stateParams.param);
+					}],
+				}
+			})
 	}
 })();

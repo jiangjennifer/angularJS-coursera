@@ -7,14 +7,21 @@
 		controller: spinnerController,
 	});
 
-	spinnerController.$inject = ['$scope'];
-	function spinnerController($scope) {
+	spinnerController.$inject = ['$scope', '$rootScope'];
+	function spinnerController($scope, $rootScope) {
 		var $ctrl = this;
+		var listener;
+
 		$ctrl.$onInit = () => {
 			$ctrl.spinnerOn = false;
-			$scope.$on('spinner: active', (event, data) => {
+			listener = $rootScope.$on('spinner: active', (event, data) => {
+				console.log('spinner is activated now!', data.on);
 				$ctrl.spinnerOn = data.on;
 			})
+		};
+
+		$ctrl.$onDestroy = () => {
+			listener();
 		}
 	}
 })();
