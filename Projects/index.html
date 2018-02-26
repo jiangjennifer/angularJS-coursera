@@ -50,11 +50,11 @@
               <a ui-sref="public.menu">
                 <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
             </li>
-            <li>
-              <a href="#">
+            <li id="navMenuButton" ui-sref-active="active">
+              <a ui-sref="public.myInfo">
                 <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
             </li>
-            <li>
+            <li id="navMenuButton" ui-sref-active="active">
               <a ui-sref="public.subscribe">
                 <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
             </li>
@@ -128,6 +128,7 @@
   <script src="src/public/menu-category/menu-category.component.js"></script>
   <script src="src/public/menuItem/menuItem.controller.js"></script>
   <script src="src/public/subscribe/subscribe.component.js"></script>
+  <script src="src/public/myInfo/myInfo.controller.js"></script>
 
   <!-- common module -->
   <script src="src/common/common.module.js"></script>

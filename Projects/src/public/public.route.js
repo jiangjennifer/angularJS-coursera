@@ -42,5 +42,11 @@
 				controller: 'subscribeController',
 				controllerAs: '$ctrl',
 			})
+			.state('public.myInfo', {
+				url: '/myInfo',
+				templateUrl: 'src/public/myInfo/myInfo.tpl.html',
+				controller: 'myInfoController',
+				controllerAs: "$ctrl",
+			})
 	}
 })();

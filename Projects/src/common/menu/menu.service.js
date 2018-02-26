@@ -30,7 +30,7 @@
 				if (!response) {
 					return false;
 				}
-				return true;
+				return response.data;
 			});
 		}
 		

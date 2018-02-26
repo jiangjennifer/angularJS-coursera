@@ -32,7 +32,7 @@
 			<span ng-if="subscribeForm.email.$error.email && subscribeForm.email.$touched"
 						style="color: white"> Correct Email is required </span>
 		</div>
-	<!-- 	<div>
+		<div>
 			<input type="text"
 						 style="color: black" 
 						 name="phone"
@@ -40,7 +40,7 @@
 						 placeholder="###-###-####"
 						 pattern="(\d{3})-(\d{3})-(\d{4})">
 			<span ng-if="subscribeForm.phone.$invalid && subscribeForm.phone.$touched"> Correct phone number is required </span>
-		</div> -->
+		</div>
 		<div>
 			<input type="text"
 						 style="color:black"
@@ -56,3 +56,5 @@
 			</div>
 	</fieldset>
 </form>
+
+<div ng-if="$ctrl.storeSuccess"> Store successfully! </div>

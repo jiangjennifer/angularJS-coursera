@@ -1,0 +1,13 @@
+<div ng-if="!$ctrl.myInfo"> You havent signed up yet. Please go to 
+<a ui-sref="public.subscribe"> Subscribe </a> Page to sign up </div>
+<div ng-if="$ctrl.myInfo" style="text-align: center">
+	<div> First Name: {{$ctrl.myInfo.firstName}} </div>
+	<div> Last Name: {{$ctrl.myInfo.lastName}} </div>
+	<div> Phone: {{$ctrl.myInfo.phone}} </div>
+	<div> Email: {{$ctrl.myInfo.email}} </div>
+	<div> Favorite: {{$ctrl.favoriteName}} </div>
+	<img class="img-responsive" width="250" height="150" 
+			 style="margin: auto; padding: 10px; "
+	     ng-src="{{$ctrl.ApiPath}}/images/{{$ctrl.myInfo.favorite}}.jpg" alt="{{$ctrl.myInfo.favorite.name}}">
+	<div> Description: {{$ctrl.description}} </div>
+</div>
