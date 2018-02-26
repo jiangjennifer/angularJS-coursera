@@ -19,7 +19,8 @@
 				// 	})
 				// }
 				return config;
-			},
+			}
+		},
 
 			response: function(response) {
 				// console.log('response is: ', response);

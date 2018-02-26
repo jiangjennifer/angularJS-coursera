@@ -15,7 +15,6 @@
 		$ctrl.$onInit = () => {
 			$ctrl.spinnerOn = false;
 			listener = $rootScope.$on('spinner: active', (event, data) => {
-				console.log('spinner is activated now!', data.on);
 				$ctrl.spinnerOn = data.on;
 			})
 		};

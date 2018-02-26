@@ -1,0 +1,58 @@
+<!-- The sign up form should ask for the following information: first name, last name, email address, and phone number. It should also ask the user to specify the menu number that's their favorite dish. (The menu number is the short_name attribute of each menu item). */ -->
+<form name="subscribeForm" novalidate> 
+	<fieldset>
+		<legend style="color: white;">Subscribe here </legend>
+		<input type="text"
+					 style="color: black" 
+					 name="firstName" 
+					 ng-model="$ctrl.firstName" 
+					 placeholder="First Name" 
+					 required>
+		<span ng-if="subscribeForm.firstName.$invalid && subscribeForm.firstName.$touched"
+					style="color: white"> First name is required </span>
+		<div>
+			<input type="text"
+						 style="color: black" 
+						 name="lastName" 
+						 ng-model="$ctrl.lastName" 
+						 placeholder="Last Name" 
+						 required>
+			<span ng-if="subscribeForm.lastName.$invalid && subscribeForm.lastName.$touched"
+						style="color: white"> Last name is required </span>
+		</div>
+		<div>
+			<input type="email"
+						 style="color: black" 
+						 name="email"
+						 ng-model="$ctrl.email"
+						 placeholder="Email Address"
+						 required>
+			<span ng-if="subscribeForm.email.$error.required && subscribeForm.email.$touched"
+						style="color: white"> Email is required </span>
+			<span ng-if="subscribeForm.email.$error.email && subscribeForm.email.$touched"
+						style="color: white"> Correct Email is required </span>
+		</div>
+	<!-- 	<div>
+			<input type="text"
+						 style="color: black" 
+						 name="phone"
+						 ng-model="$ctrl.phone"
+						 placeholder="###-###-####"
+						 pattern="(\d{3})-(\d{3})-(\d{4})">
+			<span ng-if="subscribeForm.phone.$invalid && subscribeForm.phone.$touched"> Correct phone number is required </span>
+		</div> -->
+		<div>
+			<input type="text"
+						 style="color:black"
+						 name="favorite"
+						 ng-model="$ctrl.favorite"
+						 placeholder="favorite dish (short_name)" 
+						 required>
+			<span ng-if="subscribeForm.favorite.$error.required && subscribeForm.favorite.$touched"
+						style="color: white"> Favorite is required </span>
+			<span ng-if="!$ctrl.favoriteExist && subscribeForm.favorite.$touched"> No such menu number exists </span>
+			<div>
+				<button ng-disabled="subscribeForm.$invalid" ng-click="$ctrl.submit()"> Submit </button>
+			</div>
+	</fieldset>
+</form>

@@ -12,7 +12,7 @@
 			return $http({
 				url: ApiPath + '/categories.json',
 			}).then((response) => response.data);
-		}
+		};
 
 		service.getMenuItems = (param) => {
 			return $http({
@@ -21,6 +21,17 @@
 					category : param,
 				}
 			}).then((response) => response.data);
+		};
+
+		service.getMenuItem = (param) => {
+			return $http({
+				url: ApiPath + '/menu_items/' + param + '.json'
+			}).then((response) => {
+				if (!response) {
+					return false;
+				}
+				return true;
+			});
 		}
 		
 	}

@@ -36,5 +36,11 @@
 					}],
 				}
 			})
+			.state('public.subscribe', {
+				url: '/subscribe',
+				templateUrl: 'src/public/subscribe/subscribe.tpl.html',
+				controller: 'subscribeController',
+				controllerAs: '$ctrl',
+			})
 	}
 })();
